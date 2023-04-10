@@ -1,4 +1,3 @@
-import Linha from '../../Linha/Linha'
 import './index.css'
 
 export default function DezenaLoto({ dezenas }: any) {
