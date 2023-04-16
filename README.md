@@ -7,7 +7,7 @@
 1. Para rodar a aplicação, você precisa instalar ter o <a href="https://nodejs.org/en/">Node.js</a> instalado na sua máquina.
 
 2. Depois disso, você irá ao terminal e irá digitar:<br>
-``` git clone https://github.com/brunadias3/dashboard.git ```
+``` git clone git@github.com:brunadias3/atv-i-scripts.git ```
 
 3. O próximo passo é abrir o terminal nesse diretório e digitar:<br>
 ```npm install``` or ```npm i```
