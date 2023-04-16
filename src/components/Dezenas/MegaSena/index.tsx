@@ -1,11 +1,11 @@
 import './index.css'
 
-export default function DezenasMegasena({ dezenas }: any) {
+export default function DezenasMegasena({ dezenas, color }: any) {
     return (
         <div className='dezenas'>
             <ul>
                 {dezenas.map((dezena:any, index:any) =>
-                    <li className='dezenas' key={index}>
+                    <li style={{backgroundColor:color}} className='dezenas' key={index}>
                         {dezena}
                     </li>)}
             </ul>

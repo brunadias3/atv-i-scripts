@@ -21,7 +21,7 @@ export default function Megasena() {
           <ValorAcumulado valor={megasena.valorEstimadoProximoConcurso} color='#209869' />
         </div>
         <div className='coluna2'>
-          <DezenasMegasena dezenas={megasena.dezenas} />
+          <DezenasMegasena dezenas={megasena.dezenas} color='#209869' />
           <Ganhadores quantidadeGanhadores={megasena.quantidadeGanhadores} /> 
           <Concurso numero={megasena.numeroDoConcurso} data={megasena.dataPorExtenso} />
         </div>

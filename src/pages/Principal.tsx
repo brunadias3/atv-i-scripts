@@ -1,7 +1,6 @@
-import Megasena from "./megasena/Megasena";
 import { useContexto } from "../hooks";
-import Lotofacil from "./lotofacil/Lotofacil";
 import Loading from "./Loading";
+import Rotas from "../routes";
 
 export default function Principal() {
   const { megasena } = useContexto()
@@ -10,8 +9,7 @@ export default function Principal() {
     <>
       {megasena.valorEstimadoProximoConcurso ?
         <>
-          <Megasena />
-          <Lotofacil />
+          <Rotas />
         </>
         : <Loading />}
     </>
