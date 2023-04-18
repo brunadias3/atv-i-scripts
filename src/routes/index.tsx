@@ -3,8 +3,9 @@ import Megasena from "../pages/megasena/Megasena";
 import Lotofacil from "../pages/lotofacil/Lotofacil";
 import Quina from "../pages/quina/Quina";
 import Menu from "../components/Menu/Menu";
+import Erro from "../pages/Erro";
 
-export default function Rotas() {
+export default function Rotas({currentPage}:any) {
   return (
     <BrowserRouter>
         <Menu />
@@ -12,7 +13,7 @@ export default function Rotas() {
             <Route path="/megasena" element={<Megasena />} />
             <Route path="/lotofacil" element={<Lotofacil />} />
             <Route path="/quina" element={<Quina />} />
-            {/* <Route path="*" element={<Erro />} /> */}
+            <Route path="*" element={<Erro />} />
           </Routes>
         </BrowserRouter>
   )

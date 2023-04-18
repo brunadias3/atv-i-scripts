@@ -1,5 +1,7 @@
 .menu {
     padding: 15px;
+    color: "#aaa";
+    pointer-events: "none"
 }
 
 .menu span {
