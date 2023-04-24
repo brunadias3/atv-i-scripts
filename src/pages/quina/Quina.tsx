@@ -3,7 +3,7 @@ import './quina.css'
 import Linha from '../../components/Linha/Linha';
 import useContexto from '../../hooks/useContexto';
 import Header from '../../components/Header';
-import DezenasMegasena from '../../components/Dezenas/MegaSena';
+import DezenasMegasena from '../../components/Dezenas';
 import Descricao from '../../components/Descricao';
 import ValorAcumulado from '../../components/ValorAcumulado';
 import Concurso from '../../components/Concurso';

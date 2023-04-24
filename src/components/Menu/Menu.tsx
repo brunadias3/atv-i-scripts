@@ -7,8 +7,8 @@ export default function Menu() {
   return (
     <div className='menu'>
       <span>
-        <Link to="/lotofacil" className={location === "/lotofacil" ? "isActive" : "corLoto"}>
-          Lotofácil
+        <Link to="/timemania" className={location === "/timemania" ? "isActive" : "corTimemania"}>
+          Timemania
         </Link>
       </span>
       <span>
