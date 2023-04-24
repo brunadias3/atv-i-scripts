@@ -1,5 +1,5 @@
 import logo from '../../assets/trevo-megasena.png'
-import './megasena.css'
+import styled from 'styled-components';
 import Linha from '../../components/Linha/Linha';
 import useContexto from '../../hooks/useContexto';
 import Header from '../../components/Header';
@@ -8,25 +8,40 @@ import Descricao from '../../components/Descricao';
 import ValorAcumulado from '../../components/ValorAcumulado';
 import Concurso from '../../components/Concurso';
 import Ganhadores from '../../components/Ganhadores';
+import {mega} from '../../styles/theme'
+
 export default function Megasena() {
 
   const { megasena } = useContexto()
 
   return (
     <>
-      <div className='container'>
-        <div className='coluna1'>
-          <Header logo={logo} alt='logo da megasena' name='MEGA-SENA' color='#209869' />
+      <Wrapper>
+
+        <LadoEsquerdo>
+          <Header logo={logo} alt='logo da megasena' name='MEGA-SENA' color={mega.loteria} />
           <Descricao dataProximoConcurso={megasena.dataProximoConcurso} />
-          <ValorAcumulado valor={megasena.valorEstimadoProximoConcurso} color='#209869' />
-        </div>
-        <div className='coluna2'>
-          <DezenasMegasena dezenas={megasena.dezenas} color='#209869' />
+          <ValorAcumulado valor={megasena.valorEstimadoProximoConcurso} color={mega.loteria} />
+        </LadoEsquerdo>
+
+        <LadoDireito>
+          <DezenasMegasena dezenas={megasena.dezenas} color='#fff' background={mega.loteria} />
           <Ganhadores quantidadeGanhadores={megasena.quantidadeGanhadores} /> 
           <Concurso numero={megasena.numeroDoConcurso} data={megasena.dataPorExtenso} />
-        </div>
-      </div>
+        </LadoDireito>
+
+      </Wrapper>
+      
       <Linha />
     </>
   )
 }
+
+const Wrapper = styled.div`
+  display: flex;
+`
+const LadoEsquerdo = styled.div``
+
+const LadoDireito = styled.div`
+  margin-left: 50px;
+`

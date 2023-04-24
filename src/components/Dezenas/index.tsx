@@ -1,14 +1,35 @@
-import './index.css'
+import styled from 'styled-components'
 
-export default function DezenasMegasena({ dezenas, color }: any) {
+export default function DezenasMegasena({ dezenas, color, background }: any) {
     return (
-        <div className='dezenas'>
+        <DezenaStyle>
             <ul>
                 {dezenas.map((dezena:any, index:any) =>
-                    <li style={{backgroundColor:color}} className='dezenas' key={index}>
+                    <LiStyle key={index} color={color} background={background}>
                         {dezena}
-                    </li>)}
+                    </LiStyle>)}
             </ul>
-        </div>
+        </DezenaStyle>
     )
 }
+
+interface Props {
+    color: string;
+    background: string;
+};
+
+const DezenaStyle = styled.div`
+    margin-top: 50px;
+`
+
+const LiStyle = styled.li<Props>`
+    position: flex;
+    margin: 1rem;
+    font-weight: bold;
+    display: inline;
+    border-radius: 30px;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    color: ${(props) => props.color};
+    background-color: ${(props) => props.background};
+`

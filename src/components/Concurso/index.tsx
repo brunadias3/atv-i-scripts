@@ -1,9 +1,18 @@
-import './index.css'
+import styled from 'styled-components';
+import { mega } from '../../styles/theme';
 
 export default function Concurso({ numero, data }: any) {
   return (
-    <div className='datas'>
+    <Sld>
       Concurso {numero} - {data}
-    </div>
+    </Sld>
   )
 }
+
+const Sld = styled.div`
+  color: ${mega.data};
+  font-size: 1rem;
+  padding: 30px 0px;
+  margin-left: 3.8rem;
+  margin-top: -20px;
+`;

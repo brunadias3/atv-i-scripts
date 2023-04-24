@@ -4,9 +4,8 @@ import Timemania from "../pages/timemania";
 import Quina from "../pages/quina/Quina";
 import Menu from "../components/Menu/Menu";
 import Erro from "../pages/Erro";
-import Loading from "../pages/Loading";
 
-export default function Rotas({currentPage}:any) {
+export default function Rotas() {
   return (
     <BrowserRouter>
         <Menu />

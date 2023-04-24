@@ -1,10 +1,19 @@
-import React from 'react'
-import './index.css'
+import styled from 'styled-components'
 
 export default function Loading() {
     return (
-        <div className='body-loader'>
+        <Carregando>
             <span>Carregando...</span>
-        </div>
+        </Carregando>
     )
 }
+
+const Carregando = styled.div`
+  height: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+`

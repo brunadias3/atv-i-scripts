@@ -1,9 +1,18 @@
-import './index.css'
+import styled from "styled-components"
+import { mega } from "../../styles/theme"
 
 export default function Descricao({ dataProximoConcurso }: any) {
   return (
-    <div className='descricao'>
+    <Sld>
       Estimativa de prêmio do próximo concurso. Sorteio em {dataProximoConcurso}:
-    </div>
+    </Sld>
   )
 }
+
+const Sld = styled.div`
+  color: ${mega.data};
+  padding-left: 65px;
+  width: 300px;
+  font-size: 17px;
+  margin: 25px 10px;
+`

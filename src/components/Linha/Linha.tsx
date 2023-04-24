@@ -1,7 +1,14 @@
-import './style.css'
+import styled from "styled-components"
 
 export default function Linha() {
   return (
-    <div className='linha'/>
+    <LinhaStyled/>
   )
 }
+
+const LinhaStyled = styled.div`
+    display: flex;
+    border-bottom: 1px solid #bbb;
+    align-items: flex-end;
+    padding: 10px 0px;
+`

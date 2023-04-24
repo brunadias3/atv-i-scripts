@@ -1,13 +1,32 @@
-import React from 'react'
-import './index.css'
+import styled from 'styled-components'
 
 export default function Header({ logo, alt, name, color }: any) {
   return (
-    <div className='header'>
-      <img className='' src={logo} alt={alt} />
-      <div className='titulo-mega'>
-        <span className='titulo' style={{ color: color }}>{name}</span>
-      </div>
-    </div>
+    <HeaderStyled>
+      <img src={logo} alt={alt} />
+      <TituloStyled>
+        <NameStyled style={{ color: color }}>{name}</NameStyled>
+      </TituloStyled>
+    </HeaderStyled>
   )
 }
+
+const HeaderStyled = styled.div`
+  display: inline-block;
+  padding: 30px;
+  font-size: 1.5em;
+  font-weight: bold;
+  align-items: center;
+  margin-right: 20px;
+`
+
+const TituloStyled = styled.div`
+    display: inline-block;
+    padding-top: 6px;
+    font-size: 1.4em;
+  `
+
+const NameStyled = styled.span`
+    padding:0;
+    margin:7px;
+`
