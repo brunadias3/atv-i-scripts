@@ -1,19 +1,20 @@
-# Atividade I - Programação de Scripts
+### Aula 4 - TypeORM e autenticação
 
-- <a href="./atv1.pdf">Atividade</a>
+## Delete cascade
 
-## Introdução
+Para funcionar o "on delete" na tabela spents tem de usar o objeto QueryBuilder para excluir na tabela users. No exemplo a seguir ao excluir o usuário serão excluídos os registros da tabela spents.
 
-1. Para rodar a aplicação, você precisa instalar ter o <a href="https://nodejs.org/en/">Node.js</a> instalado na sua máquina.
+```
+public async delete(_: Request, res: Response): Promise<Response> {
+    // obtém o id do usuário que foi salvo na autorização na middleware
+    const { id } = res.locals;
+    const r = await AppDataSource
+        .createQueryBuilder()
+        .delete()
+        .from(User)
+        .where("id=:id", { id })
+        .execute();
 
-2. Depois disso, você irá ao terminal e irá digitar:<br>
-``` git clone git@github.com:brunadias3/atv-i-scripts.git ```
-
-3. O próximo passo é abrir o terminal nesse diretório e digitar:<br>
-```npm install``` or ```npm i```
-
-4. E para terminar, ainda no terminal digite:<br>
-```npm start```<br>
-para visualizar a aplicação!
-
-5. Para rodar a aplicação em build na porta 3002, conforme pedido na atividade, é só digitar o comando ```serve -s build -l 3002```
+    return res.json(r);
+}
+```
